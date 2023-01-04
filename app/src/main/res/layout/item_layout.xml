@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_cardview"
+    style="@style/Base.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="@dimen/size_12"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/heroImageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_200"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <LinearLayout
+            android:id="@+id/hiddenView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/size_30"
+            app:layout_constraintTop_toBottomOf="@id/heroImageView"
+            >
+
+            <TextView
+                android:id="@+id/NameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="test"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_28"
+                android:layout_marginStart="@dimen/size_10"
+                android:layout_marginTop="@dimen/size_10"/>
+
+            <TextView
+                android:id="@+id/firstAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="test"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_18"
+                android:textAlignment="center"
+                android:layout_marginTop="@dimen/size_10"/>
+            <TextView
+                android:id="@+id/bioTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="test"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_18"
+                android:textAlignment="center"
+                android:layout_marginTop="@dimen/size_10"
+                android:layout_marginBottom="@dimen/size_20"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- This is a ConstraintLayout for the entire CardView including the expandable portion -->
+</androidx.cardview.widget.CardView>
