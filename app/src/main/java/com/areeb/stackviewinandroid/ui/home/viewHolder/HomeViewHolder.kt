@@ -14,6 +14,7 @@ class HomeViewHolder(private val bindingAdapter: ItemLayoutBinding) :
 
     private lateinit var heroesDtoItem: HeroesDtoItem
     private lateinit var clickListener: ItemClickListener<HeroesDtoItem>
+    private var currentPosition: Int? = null
 
     fun bind(heroesDtoItem: HeroesDtoItem) {
         this.heroesDtoItem = heroesDtoItem
@@ -22,23 +23,29 @@ class HomeViewHolder(private val bindingAdapter: ItemLayoutBinding) :
         bindingAdapter.firstAppearance.text = heroesDtoItem.firstappearance
         bindingAdapter.bioTextView.text = heroesDtoItem.bio
         setImageView(bindingAdapter.heroImageView, heroesDtoItem.imageurl)
+
+        itemOnClick()
     }
 
-    override fun onClick(view: View?) {
+    private fun itemOnClick() {
         bindingAdapter.heroImageView.setOnClickListener {
             if (bindingAdapter.hiddenView.visibility == View.VISIBLE) {
                 TransitionManager.beginDelayedTransition(
                     bindingAdapter.baseCardview,
                     AutoTransition()
                 )
+                bindingAdapter.hiddenView.visibility = View.GONE
             } else {
                 TransitionManager.beginDelayedTransition(
                     bindingAdapter.baseCardview,
                     AutoTransition()
                 )
-//                }
                 bindingAdapter.hiddenView.visibility = View.VISIBLE
+//                }
             }
         }
+    }
+
+    override fun onClick(view: View?) {
     }
 }

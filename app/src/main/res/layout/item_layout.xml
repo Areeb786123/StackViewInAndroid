@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/base_cardview"
@@ -16,55 +15,64 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/heroImageView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_200"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/imageView"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <LinearLayout
             android:id="@+id/hiddenView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_30"
             android:orientation="vertical"
             android:visibility="gone"
-            android:layout_marginTop="@dimen/size_30"
-            app:layout_constraintTop_toBottomOf="@id/heroImageView"
-            >
+            app:layout_constraintTop_toBottomOf="@id/heroImageView">
 
             <TextView
                 android:id="@+id/NameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="test"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_28"
                 android:layout_marginStart="@dimen/size_10"
-                android:layout_marginTop="@dimen/size_10"/>
+                android:layout_marginTop="@dimen/size_10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_28" />
 
             <TextView
                 android:id="@+id/firstAppearance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="test"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_18"
-                android:textAlignment="center"
-                android:layout_marginTop="@dimen/size_10"/>
-            <TextView
-                android:id="@+id/bioTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="test"
-                android:textColor="@color/black"
-                android:textSize="@dimen/font_18"
-                android:textAlignment="center"
                 android:layout_marginTop="@dimen/size_10"
-                android:layout_marginBottom="@dimen/size_20"/>
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_18" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_150"
+                app:cardBackgroundColor="#B5B5B5"
+                app:cardCornerRadius="@dimen/size_12">
+
+
+                <TextView
+                    android:id="@+id/bioTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:layout_marginBottom="@dimen/size_20"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:ellipsize="end"
+                    android:maxLines="5"
+                    android:textSize="@dimen/font_12" />
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
