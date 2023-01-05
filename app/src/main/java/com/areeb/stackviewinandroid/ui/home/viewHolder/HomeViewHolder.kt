@@ -9,12 +9,13 @@ import com.areeb.stackviewinandroid.databinding.ItemLayoutBinding
 import com.areeb.stackviewinandroid.ui.common.itemClickListener.ItemClickListener
 import com.areeb.stackviewinandroid.utils.setImageView
 
-class HomeViewHolder(private val bindingAdapter: ItemLayoutBinding) :
-    RecyclerView.ViewHolder(bindingAdapter.root), View.OnClickListener {
+class HomeViewHolder(
+    val bindingAdapter: ItemLayoutBinding
+) :
+    RecyclerView.ViewHolder(bindingAdapter.root) {
 
     private lateinit var heroesDtoItem: HeroesDtoItem
     private lateinit var clickListener: ItemClickListener<HeroesDtoItem>
-    private var currentPosition: Int? = null
 
     fun bind(heroesDtoItem: HeroesDtoItem) {
         this.heroesDtoItem = heroesDtoItem
@@ -41,11 +42,7 @@ class HomeViewHolder(private val bindingAdapter: ItemLayoutBinding) :
                     AutoTransition()
                 )
                 bindingAdapter.hiddenView.visibility = View.VISIBLE
-//                }
             }
         }
-    }
-
-    override fun onClick(view: View?) {
     }
 }
